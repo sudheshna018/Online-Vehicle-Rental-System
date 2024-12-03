@@ -1,0 +1,231 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color:white;
+}
+
+/* Header and Links */
+h1, h2 {
+    margin-bottom: 20px;
+    color: #edeff1;
+}
+
+a {
+    text-decoration: none;
+    color: #eef0f1;
+    font-weight: bold;
+    transition: color 0.3s;
+    
+}
+
+a:hover {
+    color: #2980b9;
+    
+}
+
+/* Form Container */
+form {
+    background-color: #fff;
+    padding: 20px 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"], input[type="email"],input[type="username"],select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+button {
+    background-color: #3498db;
+    color: #ece4e4;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Dashboard */
+label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+select, input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #dedddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#priceDisplay {
+    font-size: 20px;
+    font-weight: bold;
+    color: #27ae60;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ebf3ee;
+    text-align: center;
+}
+
+/* Layout Adjustments */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+}
+/* Logout Button Styling */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: #f5efef;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.history-btn{
+    position: absolute;
+    top: 20px;
+    right: 120px;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+/* General Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+.vehicle-models {
+    margin-top: 20px;
+}
+
+.vehicle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.vehicle-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.vehicle-item button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.vehicle-item button:hover {
+    background-color: #219150;
+}
+/* Cart Page Styling */
+.text-center p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.vehicle-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+.vehicle-image {
+    width: 250px;
+    height: 170px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Apply background image to the entire page */
+body {
+    background-image: url('background_image.jpg'); /* Replace with the path to your image */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+    background-size: cover; /* Scales image to cover the entire container */
+    background-position: center; /* Centers the image in the container */
+    background-attachment: fixed; /* Keeps the background image static */
+    margin: 0; /* Removes default body margin */
+    padding: 0; /* Removes default body padding */
+}
+#vehicleModels{
+    color:black;
+
+}

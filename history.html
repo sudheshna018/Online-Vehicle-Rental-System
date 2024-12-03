@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rental History</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Your Rental History</h2>
+    <div id="historyContainer"></div>
+    <a href="dashboard.html" class="btn">Back to Dashboard</a>
+
+    <script>
+        const currentUserEmail = localStorage.getItem('loggedInUserEmail');
+        const rentalHistory = JSON.parse(localStorage.getItem(`${currentUserEmail}_rentalHistory`)) || [];
+        const historyContainer = document.getElementById('historyContainer');
+
+        if (rentalHistory.length) {
+            rentalHistory.forEach(rental => {
+                historyContainer.innerHTML += `
+                    <p>Vehicle: ${rental.model}</p>
+                    <p>Days: ${rental.days}</p>
+                    <p>Price per day: $${rental.price}</p>
+                    <p>Date: ${rental.date}</p>
+                    <hr>
+                `;
+            });
+        } else {
+            historyContainer.innerHTML = "<p>No rental history found.</p>";
+        }
+    </script>
+</body>
+</html>

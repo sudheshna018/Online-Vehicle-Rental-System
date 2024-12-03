@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container text-center">
+        <h2>Your Cart</h2>
+        <div id="cartDetails"></div>
+        <button id="rentButton" class="btn">Rent</button>
+    </div>
+
+    <script>
+        const cartItem = JSON.parse(localStorage.getItem('cartItem'));
+
+        if (cartItem) {
+            const { model, price, days } = cartItem;
+            const totalCost = price * days;
+            document.getElementById('cartDetails').innerHTML = `
+                <p>Vehicle: ${model}</p>
+                <p>Days: ${days}</p>
+                <p>Price per day: $${price}</p>
+                <p><strong>Total Price: $${totalCost}</strong></p>
+            `;
+        } else {
+            document.getElementById('cartDetails').innerHTML = "<p>No vehicle selected.</p>";
+            document.getElementById('rentButton').style.display = 'none';
+        }
+
+        document.getElementById('rentButton')?.addEventListener('click', function() {
+            const currentUserEmail = localStorage.getItem('loggedInUserEmail');
+            let rentalHistory = JSON.parse(localStorage.getItem(`${currentUserEmail}_rentalHistory`)) || [];
+            
+            if (cartItem) {
+                cartItem.date = new Date().toLocaleDateString(); // Add date
+                rentalHistory.push(cartItem);
+                localStorage.setItem(`${currentUserEmail}_rentalHistory`, JSON.stringify(rentalHistory));
+                localStorage.removeItem('cartItem'); // Clear cart
+                alert("Vehicle rented successfully!");
+                window.location.href = "success.html"; // Redirect to success page
+            }
+        });
+    </script>
+</body>
+</html>
